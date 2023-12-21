@@ -1,0 +1,19 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs"
+import { ArgsTable } from "@storybook/addon-docs"
+import * as TitleStories from "./Title.stories"
+
+<Meta of={TitleStories} />
+
+# Title
+
+<Canvas>
+  <Story of={TitleStories.Default}></Story>
+</Canvas>
+
+<ArgsTable story="Title" />
+
+## A few examples
+
+<Canvas of={TitleStories.BigTitle} />
+<Canvas of={TitleStories.Content} />
+<Canvas of={TitleStories.SubTitle} />

@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "./Button";
+import type { Meta, StoryObj } from "@storybook/react"
+import { Button } from "./Button"
 
 const MODIFIERS = [
   "success",
@@ -10,7 +10,7 @@ const MODIFIERS = [
   "small",
   "hasiconLeft",
   "hasiconRight",
-];
+]
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -19,18 +19,18 @@ const meta: Meta<typeof Button> = {
     layout: "centered",
   },
   argTypes: { onClick: { action: "clicked" } },
-};
+}
 
-export default meta;
+export default meta
 
 type StoryProps = Omit<
   React.ComponentProps<typeof Button>,
   "classModifier" | "children"
 > & {
-  children: string;
-  classModifier: string[];
-};
-type Story = StoryObj<StoryProps>;
+  children: string
+  classModifier: string[]
+}
+type Story = StoryObj<StoryProps>
 
 export const Primary: Story = {
   name: "Button",
@@ -49,7 +49,7 @@ export const Primary: Story = {
       control: { type: "multi-select" },
     },
   },
-};
+}
 
 export const Reverse: StoryObj<typeof Button> = {
   name: "Button reverse",
@@ -57,7 +57,7 @@ export const Reverse: StoryObj<typeof Button> = {
     children: "Button Reverse",
     classModifier: "reverse",
   },
-};
+}
 
 export const Success: StoryObj<typeof Button> = {
   name: "Button success",
@@ -65,7 +65,7 @@ export const Success: StoryObj<typeof Button> = {
     children: "Button Danger",
     classModifier: "success",
   },
-};
+}
 
 export const Danger: StoryObj<typeof Button> = {
   name: "Button danger",
@@ -73,7 +73,7 @@ export const Danger: StoryObj<typeof Button> = {
     children: "Button Danger",
     classModifier: "danger",
   },
-};
+}
 
 export const Small: StoryObj<typeof Button> = {
   name: "Button small",
@@ -81,4 +81,4 @@ export const Small: StoryObj<typeof Button> = {
     children: "Button Small",
     classModifier: "small",
   },
-};
+}
