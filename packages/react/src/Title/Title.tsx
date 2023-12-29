@@ -1,13 +1,8 @@
-import {
-  ComponentPropsWithoutRef,
-  PropsWithChildren,
-  forwardRef,
-  Ref,
-} from "react"
+import { ComponentProps, PropsWithChildren, forwardRef, Ref } from "react"
 import { cx } from "classix"
 import "@axa-fr/design-system-css/src/Title/Title.agent.scss"
 
-type TitleProps = ComponentPropsWithoutRef<"h1"> & {
+type TitleProps = ComponentProps<"h1"> & {
   classModifier?: string
 }
 
