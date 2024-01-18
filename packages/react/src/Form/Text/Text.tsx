@@ -1,5 +1,5 @@
+import "@axa-fr/design-system-css/dist/Form/Text/Text.agent.scss";
 import { ComponentPropsWithRef, forwardRef } from "react";
-import "@axa-fr/design-system-css/dist/Form/InputText/InputText.agent.scss";
 
 import { getComponentClassName } from "../core";
 
