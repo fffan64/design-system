@@ -28,6 +28,7 @@ export const RadioStory: StoryObj<RadioProps> = {
     readOnly: false,
     disabled: false,
     name: "placeName",
+    errorMessage: "Error message",
     options: [
       {
         icon: <FlagIcon />,

@@ -140,6 +140,7 @@
     width: 100%;
     border-radius: 4px;
     align-items: center;
+    background-color: common.$color-white;
     box-shadow: 0 0 0 1px common.$color-gray inset;
     cursor: pointer;
 
@@ -147,6 +148,20 @@
       color: common.$color-blue-1;
       background-color: common.$color-blue-2;
       box-shadow: 0 0 0 2px common.$color-blue-1 inset;
+    }
+
+    &-error-message {
+      display: flex;
+      align-items: center;
+      color: common.$color-btn-error;
+
+      p {
+        margin: 0;
+      }
+
+      svg {
+        margin-right: 0.5rem;
+      }
     }
 
     .af-form-client__icon {
@@ -192,6 +207,16 @@
       .af-form-client__content {
         opacity: 0.4;
         cursor: not-allowed;
+      }
+    }
+
+    &--error {
+      box-shadow: 0 0 0 2px common.$color-btn-error inset;
+
+      .af-form-client__content {
+        &::before {
+          border: 2px solid common.$color-btn-error;
+        }
       }
     }
 

@@ -9,6 +9,7 @@ type Props = Omit<ComponentPropsWithRef<"input">, "checked" | "type"> & {
   choice?: ReactNode;
   description?: ReactNode;
   isChecked?: boolean;
+  isError?: boolean;
 };
 
 const RadioItem = forwardRef<HTMLInputElement, Props>(
@@ -24,6 +25,7 @@ const RadioItem = forwardRef<HTMLInputElement, Props>(
       classModifier = "",
       className = "",
       disabled = false,
+      isError = false,
       ...otherProps
     },
     inputRef,
@@ -39,7 +41,11 @@ const RadioItem = forwardRef<HTMLInputElement, Props>(
     const newId = id ?? generatedId;
 
     return (
-      <label className={optionClassName} key={value as string} htmlFor={newId}>
+      <label
+        className={`${optionClassName}${isError ? " af-form-client__radio--error" : ""}`}
+        key={value as string}
+        htmlFor={newId}
+      >
         <input
           {...otherProps}
           className="af-form-client__input-radio"

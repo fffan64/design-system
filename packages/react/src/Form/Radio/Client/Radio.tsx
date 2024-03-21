@@ -1,5 +1,6 @@
 import { ComponentPropsWithRef } from "react";
 import type { Option } from "../../core";
+import { ErrorOutline } from "../../../Icons/icons.client";
 import { RadioItem } from "./RadioItem";
 
 export enum RadioModes {
@@ -14,6 +15,7 @@ type Props = Omit<
 > & {
   options: Option[];
   mode?: keyof typeof RadioModes;
+  errorMessage?: string;
 };
 
 const baseClassNameMode = "af-form-client__radio";
@@ -45,30 +47,40 @@ const Radio = ({
   options,
   value = "",
   mode = RadioModes.default,
+  errorMessage,
   children,
   disabled,
   ...otherProps
 }: Props) => {
   return (
-    <div className={getContainerClassNameMode(mode)}>
-      {options.map((option: Option) => (
-        <RadioItem
-          {...otherProps}
-          key={option.value}
-          id={option.id}
-          value={option.value}
-          icon={option.icon}
-          choice={option.label}
-          description={option.description}
-          isChecked={option.value === value}
-          disabled={option.disabled || disabled}
-          className={getItemClassNameMode(mode)}
-          classModifier={classModifier}
-        >
-          {children}
-        </RadioItem>
-      ))}
-    </div>
+    <>
+      <div className={getContainerClassNameMode(mode)}>
+        {options.map((option: Option) => (
+          <RadioItem
+            {...otherProps}
+            key={option.value}
+            id={option.id}
+            value={option.value}
+            icon={option.icon}
+            choice={option.label}
+            description={option.description}
+            isChecked={option.value === value}
+            disabled={option.disabled || disabled}
+            className={getItemClassNameMode(mode)}
+            classModifier={classModifier}
+            isError={!!errorMessage}
+          >
+            {children}
+          </RadioItem>
+        ))}
+      </div>
+      {errorMessage && (
+        <div className={`${baseClassNameMode}-error-message`}>
+          <ErrorOutline />
+          <p>{errorMessage}</p>
+        </div>
+      )}
+    </>
   );
 };
 
