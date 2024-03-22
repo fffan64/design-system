@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { ComponentPropsWithRef } from "react";
-import HomeIcon from "@mui/icons-material/Home";
 import { RadioItem } from "./RadioItem";
+import { Icon } from "../../../Icons/Icons.client";
 
 const meta: Meta<typeof RadioItem> = {
   component: RadioItem,
@@ -27,7 +27,7 @@ export const RadioItemStory: StoryObj<RadioItemProps> = {
     />
   ),
   args: {
-    icon: <HomeIcon />,
+    icon: <Icon name="home" />,
     choice: "Lille",
     description: "Hauts-de-France",
     value: "",
@@ -55,7 +55,7 @@ export const WithOnlyLabel: StoryObj<typeof RadioItem> = {
 export const WithIcon: StoryObj<typeof RadioItem> = {
   name: "Radio with an icon",
   args: {
-    icon: <HomeIcon />,
+    icon: <Icon name="home" />,
     choice: "Lille",
     value: "",
     isChecked: false,

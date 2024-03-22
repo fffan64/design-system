@@ -151,8 +151,11 @@
 
     .af-form-client__icon {
       color: common.$color-axa;
+      fill: common.$color-axa;
 
       svg {
+        width: 2.5rem;
+        height: 2.5rem;
         font-size: 2.5rem;
       }
     }
